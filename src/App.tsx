@@ -1,8 +1,9 @@
-import React from 'react';
-import './App.css';
+import React from 'react'
+import './App.css'
+import Login from './pages/auth/Login'
 
 function App() {
-  return <h1>RI Web Client</h1>;
+  return <Login />
 }
 
-export default App;
+export default App
