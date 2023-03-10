@@ -1,10 +1,10 @@
-import { BadgeContainer } from './style'
+import { StatusPillContainer } from './style'
 
-export type BadgeProps = {
+export type StatusPillProps = {
   children?: React.ReactNode
   type?: 'success' | 'error' | 'warning' | 'normal'
 }
 
-export const Badge = ({ children, type = 'normal' }: BadgeProps) => (
-  <BadgeContainer type={type}>{children}</BadgeContainer>
+export const StatusPill = ({ children, type = 'normal' }: StatusPillProps) => (
+  <StatusPillContainer type={type}>{children}</StatusPillContainer>
 )

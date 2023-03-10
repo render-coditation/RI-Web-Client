@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { BadgeProps } from '.'
+import { StatusPillProps } from '.'
 import {
   STATUS_PILL_ERROR_BG,
   STATUS_PILL_ERROR_TEXT,
@@ -11,7 +11,7 @@ import {
   STATUS_PILL_WARNING_TEXT,
 } from '../../constants/style/colors'
 
-export const BadgeContainer = styled.div<BadgeProps>`
+export const StatusPillContainer = styled.div<StatusPillProps>`
   display: flex;
   justify-content: center;
   align-items: center;
