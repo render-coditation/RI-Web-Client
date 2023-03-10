@@ -1,5 +1,6 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { ButtonProps } from '.'
+import { ERROR_COLOR, PRIMARY_COLOR } from '../../constants/style/colors'
 
 export const ButtonContainer = styled.button<ButtonProps>`
   display: flex;
@@ -7,31 +8,27 @@ export const ButtonContainer = styled.button<ButtonProps>`
   align-items: center;
   border-radius: 5px;
   padding: 10px 15px;
-  border: 1px solid #3c82f5;
-  color: #3c82f5;
+  border: 1px solid ${PRIMARY_COLOR};
+  color: ${PRIMARY_COLOR};
   background-color: white;
   cursor: pointer;
   font-weight: 700;
   font-size: 15px;
+`
 
-  ${(props) =>
-    props.btnType === 'primary' &&
-    css`
-      background-color: #3c82f5;
-      color: white;
-    `}
-  ${(props) =>
-    props.btnType === 'danger' &&
-    css`
-      background-color: #fe3d3c;
-      color: white;
-      border: 1px solid #fe3d3c;
-    `}
-    ${(props) =>
-    props.btnType === 'danger-secondary' &&
-    css`
-      background-color: #white;
-      color: #fe3d3c;
-      border: 1px solid #fe3d3c;
-    `}
+export const PrimaryButtonContainer = styled(ButtonContainer)`
+  background-color: ${PRIMARY_COLOR};
+  color: white;
+`
+
+export const DangerButtonContainer = styled(ButtonContainer)`
+  background-color: ${ERROR_COLOR};
+  color: white;
+  border: 1px solid ${ERROR_COLOR};
+`
+
+export const DangerOutlinedButtonContainer = styled(ButtonContainer)`
+  background-color: white;
+  color: ${ERROR_COLOR};
+  border: 1px solid ${ERROR_COLOR};
 `
