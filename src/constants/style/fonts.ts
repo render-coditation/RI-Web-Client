@@ -1,1 +1,0 @@
-export const SKY_BLUE = '#33BCBA';
