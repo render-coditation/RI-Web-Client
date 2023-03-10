@@ -1,4 +1,5 @@
 export const GREY_TEXT_COLOR = '#33BCBA'
+export const LIGHT_GREY_TEXT_COLOR = '#B9B8B8'
 export const PRIMARY_COLOR = '#3C82F5'
 export const ERROR_COLOR = '#FE3D3C'
 

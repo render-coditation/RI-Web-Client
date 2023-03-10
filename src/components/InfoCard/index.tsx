@@ -20,9 +20,11 @@ export const InfoCard = ({
   <InfoCardContainer style={containerStyle}>
     <InfoCardTitle style={titleStyle}>{title}</InfoCardTitle>
     <InfoCardSubtitle style={subtitleStyle}>
-      <div>
-        <img src={icon} alt='info-card-icon' />
-      </div>
+      {icon && (
+        <div className='icon'>
+          <img src={icon} alt='info-card-icon' />
+        </div>
+      )}
       <p>{subtitle}</p>
     </InfoCardSubtitle>
   </InfoCardContainer>

@@ -3,12 +3,14 @@ import styled from 'styled-components'
 export const InfoCardContainer = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 5px;
 `
 
 export const InfoCardTitle = styled.p`
   font-weight: 700;
   font-size: 32px;
   line-height: 38px;
+  white-space: nowrap;
 `
 
 export const InfoCardSubtitle = styled.div`
@@ -19,4 +21,14 @@ export const InfoCardSubtitle = styled.div`
   font-weight: 600;
   font-size: 17px;
   line-height: 20px;
+
+  .icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .icon img {
+    width: 100%;
+    height: 100%;
+  }
 `
