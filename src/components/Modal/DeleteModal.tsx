@@ -15,6 +15,7 @@ export type DeleteModalProps = {
   onDelete: () => void
   title: string
   subtitle?: string
+  confirmKeyword?: string
   containerStyle?: React.CSSProperties
 }
 
@@ -24,6 +25,7 @@ export const DeleteModal = ({
   subtitle,
   containerStyle,
   onDelete,
+  confirmKeyword = 'DELETE',
 }: DeleteModalProps) => {
   const [isOpen, setIsOpen] = useState(open)
   const [text, setText] = useState('')
@@ -65,15 +67,15 @@ export const DeleteModal = ({
             width: '100%',
           }}
         >
-          Enter the word “DELETE” below to confirm termination.
+          {`Enter the word “${confirmKeyword}” below to confirm termination.`}
         </DeleteModalText>
         <DeleteModalInput id='confirm-delete-input' value={text} onChange={handleTextChange} />
         <DeleteModalActions>
           <Button style={{ color: 'black', borderColor: 'black' }} onClick={handleCancel}>
             Cancel
           </Button>
-          <DangerButton disabled={text !== 'DELETE'} onClick={onDelete}>
-            Delete
+          <DangerButton disabled={text !== confirmKeyword} onClick={onDelete}>
+            {`${confirmKeyword[0]}${confirmKeyword.slice(1).toLowerCase()}`}
           </DangerButton>
         </DeleteModalActions>
       </DeleteModalContainer>
