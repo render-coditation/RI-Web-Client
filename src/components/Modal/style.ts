@@ -18,6 +18,7 @@ export const ModalContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-width: 250px;
+  padding: 30px 35px;
 `
 export const ModalHeader = styled.div`
   display: flex;
@@ -25,7 +26,6 @@ export const ModalHeader = styled.div`
   font-weight: 600;
   font-size: 32px;
   line-height: 38px;
-  margin-top: 30px;
   margin-bottom: 30px;
 
   .modal-title {
