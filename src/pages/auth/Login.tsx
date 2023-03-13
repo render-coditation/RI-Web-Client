@@ -1,4 +1,4 @@
-import { GoogleLogin, googleLogout } from '@react-oauth/google'
+import { GoogleLogin, googleLogout, useGoogleLogin } from '@react-oauth/google'
 import * as S from './style'
 import { FaGoogle } from 'react-icons/fa'
 
@@ -10,10 +10,15 @@ const Login = () => {
     console.log('logout response', response)
   }
 
+  const login = useGoogleLogin({
+    onSuccess: (codeResponse) => console.log(codeResponse),
+    flow: 'auth-code',
+  })
+
   return (
     <S.GoogleLoginContainer>
       {/* <img src={Logo} alt='logo' width={160} /> */}
-      <GoogleLogin
+      {/* <GoogleLogin
         shape='rectangular'
         onSuccess={(credentialResponse) => {
           console.log(credentialResponse)
@@ -21,7 +26,11 @@ const Login = () => {
         onError={() => {
           console.log('Login Failed')
         }}
-      />
+      /> */}
+      <button onClick={login}>
+        <FaGoogle className='google-icon' />
+      </button>
+      Sign In
       <S.GoogleLogOut onClick={handleLogout}>
         <FaGoogle className='google-icon' />
         Sign Out
