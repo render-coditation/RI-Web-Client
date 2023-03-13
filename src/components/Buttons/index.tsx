@@ -9,27 +9,33 @@ export type ButtonProps = {
   children?: React.ReactNode
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
   style?: React.CSSProperties
+  disabled?: boolean
 }
 
-export const Button = ({ children, onClick, style }: ButtonProps) => (
-  <ButtonContainer onClick={onClick} style={style}>
+export const Button = ({ children, onClick, style, disabled = false }: ButtonProps) => (
+  <ButtonContainer onClick={onClick} style={style} disabled={disabled}>
     {children}
   </ButtonContainer>
 )
 
-export const PrimaryButton = ({ children, onClick, style }: ButtonProps) => (
-  <PrimaryButtonContainer onClick={onClick} style={style}>
+export const PrimaryButton = ({ children, onClick, style, disabled = false }: ButtonProps) => (
+  <PrimaryButtonContainer onClick={onClick} style={style} disabled={disabled}>
     {children}
   </PrimaryButtonContainer>
 )
 
-export const DangerButton = ({ children, onClick, style }: ButtonProps) => (
-  <DangerButtonContainer onClick={onClick} style={style}>
+export const DangerButton = ({ children, onClick, style, disabled = false }: ButtonProps) => (
+  <DangerButtonContainer onClick={onClick} style={style} disabled={disabled}>
     {children}
   </DangerButtonContainer>
 )
-export const DangerOutlinedButton = ({ children, onClick, style }: ButtonProps) => (
-  <DangerOutlinedButtonContainer onClick={onClick} style={style}>
+export const DangerOutlinedButton = ({
+  children,
+  onClick,
+  style,
+  disabled = false,
+}: ButtonProps) => (
+  <DangerOutlinedButtonContainer onClick={onClick} style={style} disabled={disabled}>
     {children}
   </DangerOutlinedButtonContainer>
 )

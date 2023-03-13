@@ -25,6 +25,12 @@ export const DangerButtonContainer = styled(ButtonContainer)`
   background-color: ${ERROR_COLOR};
   color: white;
   border: 1px solid ${ERROR_COLOR};
+
+  :disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border: none;
+  }
 `
 
 export const DangerOutlinedButtonContainer = styled(ButtonContainer)`

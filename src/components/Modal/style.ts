@@ -42,3 +42,48 @@ export const ModalHeader = styled.div`
     height: 100%;
   }
 `
+
+export const DeleteModalContainer = styled(ModalContainer)`
+  align-items: center;
+  padding: 28px 41px;
+  max-width: 398px;
+`
+
+export const DeleteModalHeader = styled.p`
+  margin-top: 22px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+`
+
+export const DeleteModalText = styled.p`
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  color: #808080;
+  text-align: center;
+`
+
+export const DeleteModalInput = styled.input`
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  margin-bottom: 25px;
+  margin-top: 5px;
+`
+
+export const DeleteModalActions = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  button {
+    flex: 1;
+  }
+`
