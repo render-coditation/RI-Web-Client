@@ -41,7 +41,7 @@ export const MasterControlCard = ({
     </FlexContainer>
     <FlexColumn>
       <MasterControlCardAction>
-        <TerminateHeader>Terminate all?</TerminateHeader>
+        <TerminateHeader>Terminate All?</TerminateHeader>
         <ToggleSwitch
           bgColor={terminateToggleColor}
           checked={isTerminateOn}
