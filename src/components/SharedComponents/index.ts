@@ -15,3 +15,7 @@ export const FlexContainer = styled.div<FlexContainerProps>`
 export const FlexColumn = styled(FlexContainer)`
   flex-direction: column;
 `
+
+export const FlexAlignCenter = styled(FlexContainer)`
+  align-items: center;
+`

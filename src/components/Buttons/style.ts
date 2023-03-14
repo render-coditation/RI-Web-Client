@@ -38,3 +38,7 @@ export const DangerOutlinedButtonContainer = styled(ButtonContainer)`
   color: ${ERROR_COLOR};
   border: 1px solid ${ERROR_COLOR};
 `
+
+export const NoOutlineButtonContainer = styled(ButtonContainer)`
+  border: none;
+`
