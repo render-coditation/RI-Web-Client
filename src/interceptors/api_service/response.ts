@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { authConstants } from 'src/constants/auth/auth-constants'
-import { store } from 'src/redux/store'
-import { clearToken, resetLoggedInUser } from 'src/slices/user'
+import { store } from 'src/redux/app/store'
+import { clearToken, resetLoggedInUser } from 'src/redux/features/user'
 import { removeValueFromStorage } from 'src/utils/storage.helper'
 
 axios.interceptors.response.use(

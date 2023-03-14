@@ -8,6 +8,7 @@ const Login = () => {
   const login = useGoogleLogin({
     onSuccess: (codeResponse) => console.log(codeResponse),
     flow: 'auth-code',
+    // eslint-disable-next-line camelcase
     redirect_uri: 'http://127.0.0.1:3000',
     scope:
       'email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloud-platform.read-only',
