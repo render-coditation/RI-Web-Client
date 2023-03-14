@@ -19,6 +19,7 @@ export const AvatarIcon = styled.figure`
   width: 40px;
   height: 40px;
   border-radius: 100%;
+  margin-bottom: 0;
 `
 
 export const ArtistDetails = styled.div`
