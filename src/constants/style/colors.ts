@@ -13,3 +13,7 @@ export const STATUS_PILL_WARNING_BG = '#fff7e6'
 export const STATUS_PILL_WARNING_TEXT = '#ffae00'
 export const STATUS_PILL_NORMAL_BG = '#d9ebff'
 export const STATUS_PILL_NORMAL_TEXT = '#007aff'
+
+// MASTER CONTROL CARD COLORS
+
+export const MASTER_CONTROL_CARD_BORDER = '#eef3fa'
