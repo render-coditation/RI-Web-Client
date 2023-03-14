@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import Login from './pages/auth/Login'
+import Login from './pages/Auth/Login'
 
 function App() {
   return <Login />
