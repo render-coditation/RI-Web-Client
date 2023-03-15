@@ -2,7 +2,7 @@ export const DashboardItems = [
   {
     id: 1,
     name: 'My Workstations',
-    path: '/myworkstations',
+    path: '/my-workstations',
   },
   // {
   //   id: 2,
@@ -14,12 +14,12 @@ export const ManagementItems = [
   {
     id: 1,
     name: ' Workstations',
-    path: '/Workstations',
+    path: '/workstations',
   },
   {
     id: 2,
     name: 'Projects',
-    path: '/Projects',
+    path: '/projects',
   },
   // {
   //   id: 3,
@@ -44,16 +44,16 @@ export const ManagementItems = [
   {
     id: 7,
     name: ' Render Farm',
-    path: '/Render Farm',
+    path: '/render-farm',
   },
   {
     id: 8,
     name: 'Master Control',
-    path: '/Master Control',
+    path: '/master-control',
   },
   {
     id: 9,
     name: 'WMI',
-    path: '/WMI',
+    path: '/wmi',
   },
 ]
