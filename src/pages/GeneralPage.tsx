@@ -1,3 +1,5 @@
+import Header from '../components/Header'
+
 interface GeneralPageProps extends React.HTMLAttributes<HTMLDivElement> {
   heading: string
 }
@@ -5,10 +7,7 @@ interface GeneralPageProps extends React.HTMLAttributes<HTMLDivElement> {
 function GeneralPage({ heading, ...rest }: GeneralPageProps) {
   return (
     <>
-      <br />
-      <br />
-      <br />
-      <h1>{heading}</h1>
+      <Header headerTitle={heading} />
       {/* Other components go here */}
     </>
   )
