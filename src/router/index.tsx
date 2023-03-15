@@ -1,7 +1,8 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { DashboardItems, ManagementItems } from '../components/Navbar/menuItems'
-import { HOME, LOGIN_PATH } from '../constants/route/test'
+import TwoStepForm from '../components/TwoStepForm'
+import { HOME, LOGIN_PATH, MULTISTEPFORM } from '../constants/route/test'
 import AppAndSideBarLayout from '../layouts'
 import Login from '../pages/auth/Login'
 import { ComponentExamples } from '../pages/ComponentExamples'
@@ -13,6 +14,7 @@ const Router = () => (
       <Route path={LOGIN_PATH} element={<Login />} />
       <Route element={<AppAndSideBarLayout />}>
         <Route path={HOME} element={<ComponentExamples />} />
+        <Route path={MULTISTEPFORM} element={<TwoStepForm />} />
         {DashboardItems.map((it) => (
           <Route key={it.id} path={it.path} element={<GeneralPage heading={it.name} />} />
         ))}
