@@ -3,7 +3,7 @@ import {
   getValueFromStorage,
   removeValueFromStorage,
   storeValueInStorage,
-} from 'src/utils/storage.helper'
+} from 'src/utils/storage/storage.helper'
 
 export const useLocalStorage = (key: string, initialValue = '') => {
   const [storedValue, setStoredValue] = useState(() => {

@@ -1,12 +1,14 @@
 import axios from 'axios'
-import { apiConstants } from 'src/constants/api/api-constants'
+import { api } from 'src/constants/api/api-constants'
+import 'src/utils/interceptors/handle_api/request'
+import 'src/utils/interceptors/handle_api/response'
 
-const login = (authCode: string) => {
-  const url = apiConstants.LOGIN_URL
+export const logIn = (code: string) => {
+  const url = api.LOGIN_URL
   return axios.post(
     url,
     {
-      authCode,
+      code,
     },
     {
       headers: {
@@ -16,12 +18,13 @@ const login = (authCode: string) => {
   )
 }
 
-const logout = (email: string) => {
-  const url = apiConstants.LOGOUT_URL
+export const logOut = (accessToken: string) => {
+  const url = api.LOGOUT_URL
   return axios.post(
     url,
     {
-      email,
+      // eslint-disable-next-line camelcase
+      access_token: accessToken,
     },
     {
       headers: {
@@ -30,10 +33,3 @@ const logout = (email: string) => {
     },
   )
 }
-
-const Service = {
-  login,
-  logout,
-}
-
-export default Service
