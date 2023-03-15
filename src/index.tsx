@@ -7,6 +7,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google'
 import { authConstants } from './constants/auth/auth-constants'
 import store from 'src/redux/app/store'
 import { Provider } from 'react-redux'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const container = document.getElementById('root')!
 const root = createRoot(container)
