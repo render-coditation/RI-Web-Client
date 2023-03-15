@@ -23,6 +23,7 @@ export const StatusPillContainer = styled.div<StatusPillProps>`
   line-height: 19px;
   color: ${STATUS_PILL_NORMAL_TEXT};
   background-color: ${STATUS_PILL_NORMAL_BG};
+  width: fit-content;
   ${(props) =>
     props.type === 'success' &&
     css`

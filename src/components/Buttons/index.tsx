@@ -1,7 +1,10 @@
+import DownloadIcon from '../../assets/icons/DownloadIcon'
+import { FlexAlignCenter, FlexContainer } from '../SharedComponents'
 import {
   ButtonContainer,
   DangerButtonContainer,
   DangerOutlinedButtonContainer,
+  NoOutlineButtonContainer,
   PrimaryButtonContainer,
 } from './style'
 
@@ -38,4 +41,13 @@ export const DangerOutlinedButton = ({
   <DangerOutlinedButtonContainer onClick={onClick} style={style} disabled={disabled}>
     {children}
   </DangerOutlinedButtonContainer>
+)
+
+export const ExportReportButton = ({ onClick, style, disabled = false }: ButtonProps) => (
+  <NoOutlineButtonContainer onClick={onClick} style={style} disabled={disabled}>
+    <FlexAlignCenter gap='7px'>
+      <DownloadIcon />
+      Export Report
+    </FlexAlignCenter>
+  </NoOutlineButtonContainer>
 )

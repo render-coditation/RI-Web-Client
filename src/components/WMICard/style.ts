@@ -1,13 +1,12 @@
 import styled from 'styled-components'
 import { LIGHT_GREY_TEXT_COLOR } from '../../constants/style/colors'
+import { FlexColumn } from '../SharedComponents'
 
 export const WMINameCardContainer = styled.div`
   display: flex;
 `
 
-export const WMIName = styled.div`
-  display: flex;
-  flex-direction: column;
+export const WMIName = styled(FlexColumn)`
   flex: 1;
   gap: 7px;
   h1 {
@@ -26,10 +25,8 @@ export const WMIName = styled.div`
   }
 `
 
-export const WMICardContainer = styled.div`
+export const WMICardContainer = styled(FlexColumn)`
   padding: 25px 32px;
-  display: flex;
-  flex-direction: column;
   max-width: 615px;
   border-radius: 15px;
   border: 2px solid #f9f9f9;

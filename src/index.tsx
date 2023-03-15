@@ -5,6 +5,7 @@ import reportWebVitals from './reportWebVitals'
 import './index.css'
 import { GoogleOAuthProvider } from '@react-oauth/google'
 import { GoogleOAuthClientId } from './constants/auth/auth-constants'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const container = document.getElementById('root')!
 const root = createRoot(container)
