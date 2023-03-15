@@ -1,4 +1,3 @@
-// import ArrowDownIcon from '../../assets/icons/ArrowDownIcon'
 import Select from 'react-select'
 
 export type Option = {
@@ -12,19 +11,38 @@ export type DropdownProps = {
   onChange: any
 }
 
-// export const Dropdown = ({ options, value, onChange }: DropdownProps) => (
-//   <DropdownContainer>
-//     <DropdownSelect name='' id='' onChange={onChange} value={value}>
-//       {options.map((option) => (
-//         <DropdownOption value={option.value} key={option.value}>
-//           {option.label}
-//         </DropdownOption>
-//       ))}
-//     </DropdownSelect>
-//     <ArrowDownIcon />
-//   </DropdownContainer>
-// )
-
 export const Dropdown = ({ options, value, onChange }: DropdownProps) => (
-  <Select defaultValue={options[0]} onChange={onChange} options={options} value={value} />
+  <Select
+    defaultValue={options[0]}
+    onChange={onChange}
+    options={options}
+    value={value}
+    styles={{
+      control: (baseStyles, state) => ({
+        ...baseStyles,
+
+        padding: '1rem',
+      }),
+      valueContainer: (baseStyles, state) => ({
+        ...baseStyles,
+
+        padding: 0,
+      }),
+      indicatorSeparator: (baseStyles, state) => ({
+        ...baseStyles,
+
+        display: 'none',
+      }),
+
+      dropdownIndicator: (baseStyles, state) => ({
+        ...baseStyles,
+
+        width: '1.5rem',
+        height: '1.5rem',
+        padding: 0,
+        justifyContent: 'center',
+        alignItems: 'center',
+      }),
+    }}
+  />
 )
