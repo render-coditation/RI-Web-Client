@@ -1,7 +1,7 @@
-import Dropdown from 'react-bootstrap/Dropdown'
+import DropdownBS from 'react-bootstrap/Dropdown'
 import { StyledDropdown } from './style'
 
-type DropdownNewProps = {
+type DropdownProps = {
   placeholder?: string
   options: string[]
   value: string | undefined
@@ -9,22 +9,22 @@ type DropdownNewProps = {
   containerStyles?: React.CSSProperties
 }
 
-export const DropdownNew = ({
+export const Dropdown = ({
   placeholder,
   options,
   value,
   onSelect,
   containerStyles,
-}: DropdownNewProps) => (
+}: DropdownProps) => (
   <StyledDropdown onSelect={onSelect}>
-    <Dropdown.Toggle style={containerStyles}>{value || placeholder}</Dropdown.Toggle>
+    <DropdownBS.Toggle style={containerStyles}>{value || placeholder}</DropdownBS.Toggle>
 
-    <Dropdown.Menu>
+    <DropdownBS.Menu>
       {options.map((option) => (
-        <Dropdown.Item eventKey={option} key={option}>
+        <DropdownBS.Item eventKey={option} key={option}>
           {option}
-        </Dropdown.Item>
+        </DropdownBS.Item>
       ))}
-    </Dropdown.Menu>
+    </DropdownBS.Menu>
   </StyledDropdown>
 )
