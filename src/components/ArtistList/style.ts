@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { LIGHT_GREY_TEXT_COLOR } from '../../constants/style/colors'
 import { ButtonContainer } from '../Buttons/style'
+import { FlexColumn } from '../SharedComponents'
 
 export const ArtistListItemContainer = styled.div`
   display: flex;
@@ -22,9 +23,7 @@ export const AvatarIcon = styled.figure`
   margin-bottom: 0;
 `
 
-export const ArtistDetails = styled.div`
-  display: flex;
-  flex-direction: column;
+export const ArtistDetails = styled(FlexColumn)`
   gap: 2px;
   flex: 1;
 
@@ -42,10 +41,7 @@ export const ArtistDetails = styled.div`
   }
 `
 
-export const ArtistListContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-`
+export const ArtistListContainer = styled(FlexColumn)``
 
 export const Section = styled.div`
   display: flex;
@@ -79,10 +75,8 @@ export const AddArtistBtn = styled(ButtonContainer)`
     height: 100%;
   }
 `
-export const ArtistSearchSection = styled.div`
-  display: flex;
-  flex-direction: column;
-`
+export const ArtistSearchSection = styled(FlexColumn)``
+
 export const ArtistSearch = styled.div`
   display: flex;
   gap: 14px;

@@ -2,10 +2,9 @@ import styled, { css } from 'styled-components'
 import { AMICardProps } from '.'
 import { LIGHT_GREY_TEXT_COLOR, PRIMARY_COLOR } from '../../constants/style/colors'
 import { ButtonContainer } from '../Buttons/style'
+import { FlexColumn } from '../SharedComponents'
 
-export const AMICardContainer = styled.div<AMICardProps>`
-  display: flex;
-  flex-direction: column;
+export const AMICardContainer = styled(FlexColumn)<AMICardProps>`
   padding: 25px 10px 15px 20px;
   max-width: 216px;
   min-height: 236px;
@@ -30,9 +29,7 @@ export const AMICardButton = styled(ButtonContainer)`
   line-height: 14px;
 `
 
-export const AMICardBody = styled.div`
-  display: flex;
-  flex-direction: column;
+export const AMICardBody = styled(FlexColumn)`
   gap: 5px;
 
   h1 {

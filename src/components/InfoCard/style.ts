@@ -1,8 +1,7 @@
 import styled from 'styled-components'
+import { FlexColumn } from '../SharedComponents'
 
-export const InfoCardContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+export const InfoCardContainer = styled(FlexColumn)`
   gap: 5px;
 `
 

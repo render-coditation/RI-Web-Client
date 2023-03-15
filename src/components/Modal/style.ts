@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { FlexColumn } from '../SharedComponents'
 
 export const ModalWrapper = styled.div`
   position: fixed;
@@ -12,11 +13,9 @@ export const ModalWrapper = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
 `
 
-export const ModalContainer = styled.div`
+export const ModalContainer = styled(FlexColumn)`
   border-radius: 10px;
   background-color: white;
-  display: flex;
-  flex-direction: column;
   min-width: 250px;
   padding: 30px 35px;
 `
