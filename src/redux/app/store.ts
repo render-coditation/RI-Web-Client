@@ -1,21 +1,15 @@
-import { createStore, applyMiddleware } from '@reduxjs/toolkit'
-import { persistStore, persistReducer } from 'redux-persist'
-import thunk from 'redux-thunk'
-import storage from 'redux-persist/lib/storage'
-import { composeWithDevTools } from 'redux-devtools-extension'
+import { configureStore, AnyAction } from '@reduxjs/toolkit'
+import { ThunkAction } from 'redux-thunk'
+import authSlice from 'src/redux/features/auth'
 
-import { rootReducer, combineReducer } from './root-reducer'
+const store = configureStore({
+  reducer: {
+    auth: authSlice,
+  },
+})
 
-const persistConfig = {
-  key: 'root',
-  storage,
-  blacklist: ['SnackBarStatus'],
-}
+export default store
 
-const persistedReducer = persistReducer(persistConfig, rootReducer)
-
-export const store = createStore(persistedReducer, composeWithDevTools(applyMiddleware(thunk)))
-
+export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch
-export type RootState = ReturnType<typeof combineReducer>
-export const persistor = persistStore(store)
+export type ThunkType = ThunkAction<void, RootState, unknown, AnyAction>

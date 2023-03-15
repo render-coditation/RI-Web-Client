@@ -1,31 +1,13 @@
-export const test = 'test'
-import React, { ReactElement, ReactNode } from 'react'
-import { Route, Redirect, RouteProps } from 'react-router-dom'
-import { useAppSelector } from 'redux-store/hooks'
+import { Routes, Route } from 'react-router-dom'
+import Login from 'src/pages/Auth/Login'
+import LogOut from 'src/pages/Auth/Logout'
 
-interface Props extends RouteProps {
-  children: ReactNode
-}
+const RouterElement = () => (
+  <Routes>
+    {/* add islogged in logic here after storing token in redux by login response */}
+    <Route path='/' element={<Login />} />
+    <Route path='/dashboard' element={<LogOut />} />
+  </Routes>
+)
 
-export default function ProtectedRoute({ children, ...rest }: Props): ReactElement {
-  const isLoggedIn = useAppSelector((state) => state.user.userInfo.isLoggedIn)
-
-  return (
-    <Route
-      {...rest}
-      render={() => {
-        if (isLoggedIn) {
-          return children
-        } else {
-          return (
-            <Redirect
-              to={{
-                pathname: '/',
-              }}
-            />
-          )
-        }
-      }}
-    />
-  )
-}
+export default RouterElement
