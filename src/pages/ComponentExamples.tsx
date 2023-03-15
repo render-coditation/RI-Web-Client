@@ -8,11 +8,6 @@ export const ComponentExamples = () => {
   console.log('ComponentEamples rendered')
   return (
     <div>
-      {/* <WMINameCard
-      name='MyConfig-Marvel-Phase3-Tony_stark'
-      description='DescriptionAliquam interdum nisi id metus dictum mollis quis tempus turpis. Aliquam tincidunt tempor dolor. Fusce mattis lobortis augue ut facilisis.'
-      icon={NvidiaLogo}
-    /> */}
       <WMICard
         name='MyConfig-Marvel-Phase3-Tony_stark'
         description='DescriptionAliquam interdum nisi id metus dictum mollis quis tempus turpis. Aliquam tincidunt tempor dolor. Fusce mattis lobortis augue ut facilisis.'
@@ -27,15 +22,6 @@ export const ComponentExamples = () => {
           <Button>Select</Button>
         </div>
       </WMICard>
-
-      <Modal
-        title='APPLICATIONS'
-        containerStyle={{
-          width: '636px',
-        }}
-      >
-        <div>Modal body</div>
-      </Modal>
     </div>
   )
 }
