@@ -4,6 +4,7 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import './index.css'
 import { GoogleOAuthProvider } from '@react-oauth/google'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import { authConstants } from './constants/auth/auth-constants'
 
 const container = document.getElementById('root')!

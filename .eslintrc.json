@@ -30,7 +30,16 @@
         "quotes": ["error", "single"],
         "no-duplicate-imports": "error",
         "arrow-body-style": ["error", "as-needed"],
-        "react/self-closing-comp": ["error", { "component": true, "html": true }]
+        "react/self-closing-comp": ["error", { "component": true, "html": true }],
+        "no-var": "warn",
+        "brace-style": "warn",
+        "prefer-template": "warn",
+        "radix": "warn",
+        "import/prefer-default-export": "off",
+        "prettier/prettier": "warn",
+        "no-relative-import-paths/no-relative-import-paths": [
+            "warn"
+          ]
     },
     "settings": {
         "import/resolver": {

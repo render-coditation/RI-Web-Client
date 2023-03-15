@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { authConstants } from 'src/constants/auth/auth-constants'
-import { store } from 'src/redux/store'
-import { clearToken, resetLoggedInUser } from 'src/slices/user'
+// import { store } from 'src/redux/store'
+// import { clearToken, resetLoggedInUser } from 'src/slices/user'
 import { removeValueFromStorage } from 'src/utils/storage.helper'
 
 axios.interceptors.response.use(
@@ -9,8 +9,8 @@ axios.interceptors.response.use(
   (err) => {
     if (err?.response.status === 403 || err?.response.statusText === 'Forbidden') {
       removeValueFromStorage(authConstants.LOCALSTORAGE_USER_TOKEN_KEY)
-      store.dispatch(clearToken())
-      store.dispatch(resetLoggedInUser())
+      // store.dispatch(clearToken())
+      // store.dispatch(resetLoggedInUser())
       window.location.href = '...'
     }
     return Promise.reject(err)
