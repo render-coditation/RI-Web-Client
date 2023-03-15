@@ -1,10 +1,10 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Login from 'src/pages/Auth/Login'
 import { DashboardItems, ManagementItems } from '../components/Navbar/menuItems'
 import TwoStepForm from '../components/TwoStepForm'
 import { HOME, LOGIN_PATH, MULTISTEPFORM } from '../constants/route/test'
 import AppAndSideBarLayout from '../layouts'
-import Login from '../pages/auth/Login'
 import { ComponentExamples } from '../pages/ComponentExamples'
 import GeneralPage from '../pages/GeneralPage'
 

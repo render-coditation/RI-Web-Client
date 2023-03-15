@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
 import Router from './router'
+import Login from './pages/Auth/Login'
 
 function App() {
   return <Router />
