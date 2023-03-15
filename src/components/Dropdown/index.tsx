@@ -10,9 +10,16 @@ export type DropdownProps = {
   value: Option
   onChange: React.Dispatch<React.SetStateAction<Option>>
   placeholder?: string
+  containerStyles?: React.CSSProperties
 }
 
-export const Dropdown = ({ options, value, onChange, placeholder }: DropdownProps) => (
+export const Dropdown = ({
+  options,
+  value,
+  onChange,
+  placeholder,
+  containerStyles,
+}: DropdownProps) => (
   <Select
     defaultValue={options[0]}
     onChange={onChange}
@@ -24,6 +31,8 @@ export const Dropdown = ({ options, value, onChange, placeholder }: DropdownProp
         ...baseStyles,
 
         padding: '1rem',
+
+        ...containerStyles,
       }),
       valueContainer: (baseStyles, state) => ({
         ...baseStyles,
