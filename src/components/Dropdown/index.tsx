@@ -1,4 +1,4 @@
-import Select from 'react-select'
+import Select, { GroupBase, OptionsOrGroups } from 'react-select'
 
 export type Option = {
   value: string
@@ -6,17 +6,19 @@ export type Option = {
 }
 
 export type DropdownProps = {
-  options: any
-  value: string
-  onChange: any
+  options: OptionsOrGroups<any, GroupBase<any>>
+  value: Option
+  onChange: React.Dispatch<React.SetStateAction<Option>>
+  placeholder?: string
 }
 
-export const Dropdown = ({ options, value, onChange }: DropdownProps) => (
+export const Dropdown = ({ options, value, onChange, placeholder }: DropdownProps) => (
   <Select
     defaultValue={options[0]}
     onChange={onChange}
     options={options}
     value={value}
+    placeholder={placeholder}
     styles={{
       control: (baseStyles, state) => ({
         ...baseStyles,
