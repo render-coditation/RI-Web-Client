@@ -6,11 +6,18 @@ type DropdownNewProps = {
   options: string[]
   value: string | undefined
   onSelect: (eventKey: string, event: any) => void
+  containerStyles?: React.CSSProperties
 }
 
-export const DropdownNew = ({ placeholder, options, value, onSelect }: DropdownNewProps) => (
+export const DropdownNew = ({
+  placeholder,
+  options,
+  value,
+  onSelect,
+  containerStyles,
+}: DropdownNewProps) => (
   <StyledDropdown onSelect={onSelect}>
-    <Dropdown.Toggle>{value || placeholder}</Dropdown.Toggle>
+    <Dropdown.Toggle style={containerStyles}>{value || placeholder}</Dropdown.Toggle>
 
     <Dropdown.Menu>
       {options.map((option) => (
