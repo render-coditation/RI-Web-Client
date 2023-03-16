@@ -1,11 +1,24 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { googleLogout } from '@react-oauth/google'
+import { useAppSelector, useAppDispatch } from 'src/hooks/thunkAppDispatch'
+import { logout } from 'src/redux/features/auth/auth-thunk'
 
 const LogoutIcon = () => {
+  const dispatch = useAppDispatch()
   const navigate = useNavigate()
 
+  const { currentUserData } = useAppSelector((state) => state.auth)
+  const accessToken = currentUserData.accessToken ? currentUserData.accessToken : ''
+  navigate('/login')
+
   const logOut = () => {
-    navigate('/login')
+    // loading true
+    const response = googleLogout()
+    console.log('logout response', response)
+    dispatch(logout(accessToken))
+    // loading false
+    navigate('/')
   }
 
   return (

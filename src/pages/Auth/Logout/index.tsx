@@ -19,7 +19,6 @@ const LogOut = () => {
     dispatch(logout(accessToken))
     // loading false
     navigate('/')
-    // call api thunk here
   }
 
   return (

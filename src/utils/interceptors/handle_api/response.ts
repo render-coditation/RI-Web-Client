@@ -8,7 +8,7 @@ axios.interceptors.response.use(
   (response) => response.data,
   (err) => {
     if (err?.response.status === 403 || err?.response.statusText === 'Forbidden') {
-      removeValueFromStorage(authConstants.LOCALSTORAGE_USER_TOKEN_KEY)
+      removeValueFromStorage(authConstants.ACCESS_KEY)
       store.dispatch(clearToken())
       store.dispatch(resetLoggedInUser())
       window.location.href = '...'

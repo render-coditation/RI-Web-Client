@@ -2,8 +2,9 @@ import axios from 'axios'
 import { api } from 'src/constants/api/api-constants'
 import 'src/utils/interceptors/handle_api/request'
 import 'src/utils/interceptors/handle_api/response'
+import { loginPayload, logOutPayload } from 'src/interfaces/Auth'
 
-export const logIn = (code: string) => {
+export const logIn = (code: loginPayload['code']) => {
   const url = api.LOGIN_ENDPOINT
   return axios.post(
     url,
@@ -18,7 +19,7 @@ export const logIn = (code: string) => {
   )
 }
 
-export const logOut = (accessToken: string) => {
+export const logOut = (accessToken:logOutPayload['accessToken']) => {
   const url = api.LOGOUT_ENDPOINT
   return axios.post(
     url,

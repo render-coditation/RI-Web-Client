@@ -3,11 +3,15 @@ import { logIn, logOut } from 'src/services'
 import { ThunkAction } from 'redux-thunk'
 import { AnyAction } from '@reduxjs/toolkit'
 import { RootState } from 'src/redux/app/store'
+import { loginPayload, logOutPayload } from 'src/interfaces/Auth'
+import { currentUserData } from './auth-initial-state'
+import { storeValueInStorage, removeValueFromStorage } from 'src/utils/storage/storage.helper'
+import { authConstants } from 'src/constants/auth/auth-constants'
 
 type ThunkType = ThunkAction<void, RootState, unknown, AnyAction>
 
 export const login =
-  (code: string): ThunkType =>
+  (code: loginPayload['code']): ThunkType =>
   async (dispatch, _getState) => {
     try {
       const response: any = await logIn(code)
@@ -22,7 +26,8 @@ export const login =
         }),
       )
       dispatch(updateIsLoggedIn(true))
-      // set access_token in localstorage
+      storeValueInStorage(authConstants.ACCESS_KEY, `${currentUserData.accessToken}`)
+
       return response
     } catch (error: any) {
       console.log('error on login', error)
@@ -32,7 +37,7 @@ export const login =
 
 export const clearToken = (): ThunkType => async (dispatch, _getState) => {
   try {
-    // clearToken steps
+    removeValueFromStorage(authConstants.ACCESS_KEY)
   } catch (error: any) {
     console.log('error on clearToken', error)
     return error
@@ -41,7 +46,8 @@ export const clearToken = (): ThunkType => async (dispatch, _getState) => {
 
 export const resetLoggedInUser = (): ThunkType => async (dispatch, _getState) => {
   try {
-    // resetLoggedInUser in redux
+    dispatch(updateCurrentUserData({}))
+    dispatch(updateIsLoggedIn(false))
   } catch (error: any) {
     console.log('error on resetLoggedInUSer', error)
     return error
@@ -49,15 +55,13 @@ export const resetLoggedInUser = (): ThunkType => async (dispatch, _getState) =>
 }
 
 export const logout =
-  (accessToken: string): ThunkType =>
+  (accessToken: logOutPayload['accessToken']): ThunkType =>
   async (dispatch, _getState) => {
     try {
       const response: any = await logOut(accessToken)
       console.log('logout response', response)
-      dispatch(updateIsLoggedIn(false))
-      // dispatch(clearToken())
-      // dispatch(resetLoggedInUser())
-      // remove access_token in localstorage
+      dispatch(clearToken())
+      dispatch(resetLoggedInUser())
       return response
     } catch (error: any) {
       console.log('error on logout', error)

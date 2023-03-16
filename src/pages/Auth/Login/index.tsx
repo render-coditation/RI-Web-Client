@@ -17,7 +17,7 @@ const Login = () => {
       console.log('response after dispatch', response)
       // loading false
       // toast msg
-      navigate('/dashboard')
+      navigate('/')
     }
   }
 
