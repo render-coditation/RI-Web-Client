@@ -29,7 +29,7 @@ export const StatusCard = ({ status }: StatusCardProps) => (
   <StatusCardContainer color={getStatusColor(status)}>
     <StatusCardHeader>
       <CardHeading>STATUS</CardHeading>
-      <FiArrowUpRight color={getStatusColor(status)} />
+      <FiArrowUpRight color={getStatusColor(status)} size={30} />
     </StatusCardHeader>
 
     <FlexAlignCenter>
