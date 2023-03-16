@@ -14,6 +14,7 @@ import { ERROR_COLOR, PRIMARY_COLOR } from '../../constants/style/colors'
 import { Table } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { RenderCard } from '../../components/RenderCard'
+import { StatusCard } from '../../components/StatusCard'
 
 export const GeneralTabData = () => (
   <FlexColumn gap='20px'>
@@ -40,6 +41,7 @@ export const GeneralTabData = () => (
         name='Project_XYZ_IN_Name_1'
         icon={UsersIcon}
       />
+      <StatusCard status='Active' />
     </FlexWrap>
 
     <FlexWrap gap='20px'>
