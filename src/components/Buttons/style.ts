@@ -14,6 +14,7 @@ export const ButtonContainer = styled.button<ButtonProps>`
   cursor: pointer;
   font-weight: 700;
   font-size: 15px;
+  gap: 7px;
 `
 
 export const PrimaryButtonContainer = styled(ButtonContainer)`

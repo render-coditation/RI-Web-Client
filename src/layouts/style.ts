@@ -9,7 +9,7 @@ export const MainContainer = styled.div`
 `
 
 export const RoutesPane = styled.div`
-  margin-left: 1rem;
+  padding: 0 2rem;
   width: 100%;
   height: 100%;
   overflow-y: auto;

@@ -16,10 +16,10 @@ const Router = () => (
         <Route path={HOME} element={<ComponentExamples />} />
         <Route path={MULTISTEPFORM} element={<TwoStepForm />} />
         {DashboardItems.map((it) => (
-          <Route key={it.id} path={it.path} element={<GeneralPage heading={it.name} />} />
+          <Route key={it.id} path={it.path} element={it.component} />
         ))}
         {ManagementItems.map((it) => (
-          <Route key={it.id} path={it.path} element={<GeneralPage heading={it.name} />} />
+          <Route key={it.id} path={it.path} element={it.component} />
         ))}
       </Route>
     </Routes>

@@ -1,8 +1,12 @@
+import GeneralPage from 'src/pages/GeneralPage'
+import { ProjectDetails } from 'src/pages/Project/ProjectDetails'
+
 export const DashboardItems = [
   {
     id: 1,
     name: 'My Workstations',
     path: '/my-workstations',
+    component: <GeneralPage heading='My Workstations' />,
   },
   // {
   //   id: 2,
@@ -13,13 +17,15 @@ export const DashboardItems = [
 export const ManagementItems = [
   {
     id: 1,
-    name: ' Workstations',
+    name: 'Workstations',
     path: '/workstations',
+    component: <GeneralPage heading='Workstations' />,
   },
   {
     id: 2,
     name: 'Projects',
     path: '/projects',
+    component: <ProjectDetails heading='Projects' />,
   },
   // {
   //   id: 3,
@@ -43,17 +49,20 @@ export const ManagementItems = [
   // },
   {
     id: 7,
-    name: ' Render Farm',
+    name: 'Render Farm',
     path: '/render-farm',
+    component: <GeneralPage heading='Render Farm' />,
   },
   {
     id: 8,
     name: 'Master Control',
     path: '/master-control',
+    component: <GeneralPage heading='Master Control' />,
   },
   {
     id: 9,
     name: 'WMI',
     path: '/wmi',
+    component: <GeneralPage heading='WMI' />,
   },
 ]
