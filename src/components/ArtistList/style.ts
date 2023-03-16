@@ -41,7 +41,9 @@ export const ArtistDetails = styled(FlexColumn)`
   }
 `
 
-export const ArtistListContainer = styled(FlexColumn)``
+export const ArtistListContainer = styled(FlexColumn)`
+  flex: 1;
+`
 
 export const Section = styled.div`
   display: flex;

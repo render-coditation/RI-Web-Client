@@ -4,7 +4,6 @@ import { FlexColumn, FlexWrap } from '../../components/SharedComponents'
 import UsersIcon from '../../assets/users-icon.svg'
 import { CardHeading } from '../../components/ProjectInfoCard/style'
 import {
-  WorkstationArtistList,
   WorkstationCard,
   WorkstationTableHead,
   WorkstationTableItem,
@@ -15,6 +14,7 @@ import { Table } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { RenderCard } from '../../components/RenderCard'
 import { StatusCard } from '../../components/StatusCard'
+import { ArtistList } from 'src/components/ArtistList'
 
 export const GeneralTabData = () => (
   <FlexColumn gap='20px'>
@@ -119,7 +119,7 @@ export const GeneralTabData = () => (
         </WorkstationTableWrapper>
       </WorkstationCard>
 
-      <WorkstationArtistList
+      <ArtistList
         artists={[
           { name: 'John Doe', email: 'john.doe@renderimagination.com' },
           { name: 'John Doe', email: 'john.doe@renderimagination.com' },

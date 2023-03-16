@@ -73,12 +73,6 @@ export const WorkstationTableItem = styled.td`
   }
 `
 
-export const WorkstationArtistList = styled(ArtistList)`
-  ${ArtistListContainer} {
-    flex: 1;
-  }
-`
-
 export const StyledDangerButton = styled(DangerOutlinedButtonContainer)`
   font-weight: ${FONT_600};
   font-size: 13px;
