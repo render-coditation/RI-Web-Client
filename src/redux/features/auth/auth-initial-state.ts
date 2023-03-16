@@ -1,4 +1,4 @@
-import { currentUserObject } from './auth-interface'
+import { currentUserObject } from 'src/redux/features/auth/auth-interface'
 
 export const currentUserData: currentUserObject = {
   username: null,

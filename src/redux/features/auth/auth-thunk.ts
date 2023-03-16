@@ -1,39 +1,39 @@
-import { updateIsLoggedIn, updateCurrentUserData } from './auth-slice'
+import { AnyAction, createAsyncThunk } from '@reduxjs/toolkit'
+import { updateIsLoggedIn, updateCurrentUserData } from 'src/redux/features/auth/auth-slice'
 import { logIn, logOut } from 'src/services'
 import { ThunkAction } from 'redux-thunk'
-import { AnyAction } from '@reduxjs/toolkit'
 import { RootState } from 'src/redux/app/store'
 import { loginPayload, logOutPayload } from 'src/interfaces/Auth'
-import { currentUserData } from './auth-initial-state'
 import { storeValueInStorage, removeValueFromStorage } from 'src/utils/storage/storage.helper'
 import { authConstants } from 'src/constants/auth/auth-constants'
 
 type ThunkType = ThunkAction<void, RootState, unknown, AnyAction>
 
-export const login =
-  (code: loginPayload['code']): ThunkType =>
-  async (dispatch, _getState) => {
-    try {
-      const response: any = await logIn(code)
-      console.log('login response', response)
-      dispatch(
-        updateCurrentUserData({
-          username: response.json.user,
-          role: response.json.role,
-          email: response.json.email,
-          picture: response.json.picture,
-          accessToken: response.json.access_token,
-        }),
-      )
-      dispatch(updateIsLoggedIn(true))
-      storeValueInStorage(authConstants.ACCESS_KEY, `${currentUserData.accessToken}`)
+export const login = createAsyncThunk('auth/login', async (code: loginPayload['code']) => {
+  try {
+    const response: any = await logIn(code)
+    console.log('login response', response)
+    storeValueInStorage(authConstants.ACCESS_KEY, `${response.json.access_token}`)
+    return response.json
+  } catch (error: any) {
+    console.log('error on login', error)
+    throw error
+  }
+})
 
+export const logout = createAsyncThunk(
+  'auth/logout',
+  async (accessToken: logOutPayload['accessToken']) => {
+    try {
+      const response: any = await logOut(accessToken)
+      console.log('logout response', response)
       return response
     } catch (error: any) {
-      console.log('error on login', error)
-      return error
+      console.log('error on logout', error)
+      throw error
     }
-  }
+  },
+)
 
 export const clearToken = (): ThunkType => async (dispatch, _getState) => {
   try {
@@ -53,18 +53,3 @@ export const resetLoggedInUser = (): ThunkType => async (dispatch, _getState) =>
     return error
   }
 }
-
-export const logout =
-  (accessToken: logOutPayload['accessToken']): ThunkType =>
-  async (dispatch, _getState) => {
-    try {
-      const response: any = await logOut(accessToken)
-      console.log('logout response', response)
-      dispatch(clearToken())
-      dispatch(resetLoggedInUser())
-      return response
-    } catch (error: any) {
-      console.log('error on logout', error)
-      return error
-    }
-  }

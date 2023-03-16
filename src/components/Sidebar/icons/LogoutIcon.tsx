@@ -10,7 +10,7 @@ const LogoutIcon = () => {
 
   const { currentUserData } = useAppSelector((state) => state.auth)
   const accessToken = currentUserData.accessToken ? currentUserData.accessToken : ''
-  navigate('/login')
+  navigate('/')
 
   const logOut = () => {
     // loading true
