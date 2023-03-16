@@ -1,10 +1,8 @@
 import { DateCard } from '../../components/DateCard'
-import { DateInput } from '../../components/DateInput'
 import { ProjectInfoCard } from '../../components/ProjectInfoCard'
-import { FlexColumn, FlexContainer, FlexWrap } from '../../components/SharedComponents'
+import { FlexColumn, FlexWrap } from '../../components/SharedComponents'
 import UsersIcon from '../../assets/users-icon.svg'
-import { CardContainer, CardHeading } from '../../components/ProjectInfoCard/style'
-import CardHeader from 'react-bootstrap/esm/CardHeader'
+import { CardHeading } from '../../components/ProjectInfoCard/style'
 import {
   WorkstationArtistList,
   WorkstationCard,
@@ -15,9 +13,10 @@ import {
 import { ERROR_COLOR, PRIMARY_COLOR } from '../../constants/style/colors'
 import { Table } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { RenderCard } from '../../components/RenderCard'
 
 export const GeneralTabData = () => (
-  <FlexColumn>
+  <FlexColumn gap='20px'>
     <FlexWrap gap='20px'>
       <ProjectInfoCard heading='PROJECT' name='Project_XYZ' icon={UsersIcon} />
       <ProjectInfoCard
@@ -126,5 +125,6 @@ export const GeneralTabData = () => (
         showSearchBar={false}
       />
     </FlexWrap>
+    <RenderCard noOfMachines={7} />
   </FlexColumn>
 )

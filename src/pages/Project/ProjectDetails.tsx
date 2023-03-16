@@ -1,6 +1,6 @@
-import { Col, Nav, Row, Tab, Tabs } from 'react-bootstrap'
+import { Nav, Tab } from 'react-bootstrap'
+import { AiOutlinePlus } from 'react-icons/ai'
 import Header from 'src/components/Header'
-import AddIcon from '../../assets/icons/AddIcon'
 import BackArrowIcon from '../../assets/icons/BackArrowIcon'
 import { Button, DangerOutlinedButton, PrimaryButton } from '../../components/Buttons'
 import { FlexAlignCenter, FlexColumn, FlexContainer } from '../../components/SharedComponents'
@@ -19,7 +19,7 @@ export const ProjectDetails = ({ heading, ...rest }: ProjectDetailProps) => (
         <BackArrowIcon />
         <PageHeading>Project_Lorem_Ipsum</PageHeading>
         <PrimaryButton>
-          <AddIcon />
+          <AiOutlinePlus size={24} />
           WMI
         </PrimaryButton>
       </ProjectDetailHeader>

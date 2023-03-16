@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { AiOutlinePlus } from 'react-icons/ai'
 import { ArtistListItem } from './ArtistListItem'
 import {
   AddArtistBtn,
@@ -56,9 +57,7 @@ export const ArtistList = ({
         <p>Artists</p>
         {showAddBtn && (
           <AddArtistBtn onClick={onAdd}>
-            <figure>
-              <img src={AddIcon} alt='add-artist-icon' />
-            </figure>
+            <AiOutlinePlus size={15} />
             Add
           </AddArtistBtn>
         )}
