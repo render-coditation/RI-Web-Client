@@ -5,7 +5,14 @@ import BackArrowIcon from '../../assets/icons/BackArrowIcon'
 import { Button, DangerOutlinedButton, PrimaryButton } from '../../components/Buttons'
 import { FlexAlignCenter, FlexColumn, FlexContainer } from '../../components/SharedComponents'
 import { GeneralTabData } from './GeneralTabData'
-import { PageHeading, ProjectDetailHeader, StyledTabItem, TabsAndActions } from './style'
+import {
+  PageHeading,
+  ProjectDetailHeader,
+  StyledArchiveButton,
+  StyledDangerButton,
+  StyledTabItem,
+  TabsAndActions,
+} from './style'
 
 interface ProjectDetailProps extends React.HTMLAttributes<HTMLDivElement> {
   heading: string
@@ -23,7 +30,7 @@ export const ProjectDetails = ({ heading, ...rest }: ProjectDetailProps) => (
           WMI
         </PrimaryButton>
       </ProjectDetailHeader>
-      <Tab.Container id='left-tabs-example' defaultActiveKey='first'>
+      <Tab.Container id='left-tabs-example' defaultActiveKey='general'>
         <TabsAndActions>
           <FlexContainer>
             <Nav variant='tabs'>
@@ -33,8 +40,8 @@ export const ProjectDetails = ({ heading, ...rest }: ProjectDetailProps) => (
             </Nav>
           </FlexContainer>
           <FlexContainer gap='10px'>
-            <Button>Archive</Button>
-            <DangerOutlinedButton>Terminate</DangerOutlinedButton>
+            <StyledArchiveButton>Archive</StyledArchiveButton>
+            <StyledDangerButton>Terminate</StyledDangerButton>
           </FlexContainer>
         </TabsAndActions>
         <Tab.Content>

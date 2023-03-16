@@ -1,11 +1,12 @@
 import styled from 'styled-components'
 import { FlexContainer } from 'src/components/SharedComponents'
 import { FONT_600, FONT_700 } from '../../constants/style/fonts'
-import { PRIMARY_COLOR } from '../../constants/style/colors'
+import { ARCHIVE_GREY_COLOR, PRIMARY_COLOR } from '../../constants/style/colors'
 import { Nav } from 'react-bootstrap'
 import { CardContainer } from '../../components/ProjectInfoCard/style'
 import { ArtistList } from '../../components/ArtistList'
 import { ArtistListContainer } from '../../components/ArtistList/style'
+import { ButtonContainer, DangerOutlinedButtonContainer } from '../../components/Buttons/style'
 
 export const ProjectDetailHeader = styled(FlexContainer)`
   align-items: center;
@@ -76,4 +77,18 @@ export const WorkstationArtistList = styled(ArtistList)`
   ${ArtistListContainer} {
     flex: 1;
   }
+`
+
+export const StyledDangerButton = styled(DangerOutlinedButtonContainer)`
+  font-weight: ${FONT_600};
+  font-size: 13px;
+  line-height: 15px;
+`
+
+export const StyledArchiveButton = styled(ButtonContainer)`
+  color: ${ARCHIVE_GREY_COLOR};
+  border: 1px solid ${ARCHIVE_GREY_COLOR};
+  font-weight: ${FONT_600};
+  font-size: 13px;
+  line-height: 15px;
 `

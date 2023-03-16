@@ -3,6 +3,7 @@ export const LIGHT_GREY_TEXT_COLOR = '#B9B8B8'
 export const PRIMARY_COLOR = '#3C82F5'
 export const ERROR_COLOR = '#FE3D3C'
 export const BORDER_LIGHT_GRAY = '#E7E7E7'
+export const ARCHIVE_GREY_COLOR = '#808080'
 
 // STATUS PILL COLORS
 
