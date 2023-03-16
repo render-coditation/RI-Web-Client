@@ -6,10 +6,12 @@ import UsersIcon from '../../assets/users-icon.svg'
 import { CardContainer, CardHeading } from '../../components/ProjectInfoCard/style'
 import CardHeader from 'react-bootstrap/esm/CardHeader'
 import {
+  WorkstationArtistList,
+  WorkstationCard,
   WorkstationTableHead,
   WorkstationTableItem,
   WorkstationTableWrapper,
-} from '../../components/DateCard/style'
+} from './style'
 import { ERROR_COLOR, PRIMARY_COLOR } from '../../constants/style/colors'
 import { Table } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
@@ -41,8 +43,8 @@ export const GeneralTabData = () => (
       />
     </FlexWrap>
 
-    <FlexWrap>
-      <CardContainer gap='11px'>
+    <FlexWrap gap='20px'>
+      <WorkstationCard>
         <CardHeading>WORKSTATIONS</CardHeading>
 
         <WorkstationTableWrapper>
@@ -114,7 +116,15 @@ export const GeneralTabData = () => (
             </tr>
           </Table>
         </WorkstationTableWrapper>
-      </CardContainer>
+      </WorkstationCard>
+
+      <WorkstationArtistList
+        artists={[
+          { name: 'John Doe', email: 'john.doe@renderimagination.com' },
+          { name: 'John Doe', email: 'john.doe@renderimagination.com' },
+        ]}
+        showSearchBar={false}
+      />
     </FlexWrap>
   </FlexColumn>
 )
