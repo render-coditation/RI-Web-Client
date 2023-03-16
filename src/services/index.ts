@@ -4,7 +4,7 @@ import 'src/utils/interceptors/handle_api/request'
 import 'src/utils/interceptors/handle_api/response'
 
 export const logIn = (code: string) => {
-  const url = api.LOGIN_URL
+  const url = api.LOGIN_ENDPOINT
   return axios.post(
     url,
     {
@@ -19,7 +19,7 @@ export const logIn = (code: string) => {
 }
 
 export const logOut = (accessToken: string) => {
-  const url = api.LOGOUT_URL
+  const url = api.LOGOUT_ENDPOINT
   return axios.post(
     url,
     {
