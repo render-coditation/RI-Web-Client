@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { currentUserData } from 'src/redux/features/auth/auth-initial-state'
-import { login, logout } from 'src/redux/features/auth//auth-thunk'
+import { login, logout } from 'src/redux/features/auth/auth-thunk'
 
 interface AuthState {
   currentUserData: typeof currentUserData
@@ -18,7 +18,7 @@ const initialState: AuthState = {
   isLoading: false,
 }
 
-const authSlice = createSlice({
+export const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
@@ -72,6 +72,3 @@ const authSlice = createSlice({
     })
   },
 })
-
-export const { updateIsLoggedIn, updateCurrentUserData } = authSlice.actions
-export default authSlice.reducer
