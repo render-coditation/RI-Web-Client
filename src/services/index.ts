@@ -2,7 +2,7 @@ import axios from 'axios'
 import { api } from 'src/constants/api/api-constants'
 import 'src/utils/interceptors/handle_api/request'
 import 'src/utils/interceptors/handle_api/response'
-import { loginPayload, logOutPayload } from 'src/interfaces/Auth'
+import { loginPayload } from 'src/interfaces/Auth'
 
 export const logIn = (code: loginPayload['code']) => {
   const url = api.LOGIN_ENDPOINT
@@ -19,18 +19,11 @@ export const logIn = (code: loginPayload['code']) => {
   )
 }
 
-export const logOut = (accessToken:logOutPayload['accessToken']) => {
+export const logOut = () => {
   const url = api.LOGOUT_ENDPOINT
-  return axios.post(
-    url,
-    {
-      // eslint-disable-next-line camelcase
-      access_token: accessToken,
+  return axios.get(url, {
+    headers: {
+      'Content-Type': 'application/json',
     },
-    {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    },
-  )
+  })
 }

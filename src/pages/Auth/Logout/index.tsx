@@ -16,7 +16,7 @@ const LogOut = () => {
     // loading true
     const response = googleLogout()
     console.log('logout response', response)
-    dispatch(logout(accessToken))
+    dispatch(logout())
     // loading false
     navigate('/')
   }
