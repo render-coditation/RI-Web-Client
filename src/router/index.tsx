@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Login from 'src/pages/Auth/Login'
+import { ProjectDetails } from 'src/pages/Project/ProjectDetails'
 import { DashboardItems, ManagementItems } from '../components/Navbar/menuItems'
 import TwoStepForm from '../components/TwoStepForm'
 import { HOME, LOGIN_PATH, MULTISTEPFORM } from '../constants/route/test'
@@ -21,6 +22,7 @@ const Router = () => (
         {ManagementItems.map((it) => (
           <Route key={it.id} path={it.path} element={it.component} />
         ))}
+        <Route path='/projects/:projectId' element={<ProjectDetails heading='Projects' />} />
       </Route>
     </Routes>
   </BrowserRouter>

@@ -1,5 +1,5 @@
 import GeneralPage from 'src/pages/GeneralPage'
-import { ProjectDetails } from 'src/pages/Project/ProjectDetails'
+import { ProjectPage } from 'src/pages/Project'
 
 export const DashboardItems = [
   {
@@ -25,8 +25,9 @@ export const ManagementItems = [
     id: 2,
     name: 'Projects',
     path: '/projects',
-    component: <ProjectDetails heading='Projects' />,
+    component: <ProjectPage heading='Projects' />,
   },
+
   // {
   //   id: 3,
   //   name: ' License Servers',

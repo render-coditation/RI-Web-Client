@@ -5,14 +5,12 @@ import { CardHeading } from '../ProjectInfoCard/style'
 import { FlexAlignCenter } from '../SharedComponents'
 import { StatusCardContainer, StatusCardHeader, StatusText } from './style'
 
-type StatusTypes = 'Active' | 'Inactive'
-
 type StatusCardProps = {
-  status: StatusTypes
+  status: string
   onClick?: () => void
 }
 
-const getStatusColor = (status: StatusTypes) => {
+const getStatusColor = (status: string) => {
   switch (status) {
     case 'Active':
       return STATUS_PILL_SUCCESS_TEXT

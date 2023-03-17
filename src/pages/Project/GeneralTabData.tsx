@@ -15,118 +15,139 @@ import { Link } from 'react-router-dom'
 import { RenderCard } from '../../components/RenderCard'
 import { StatusCard } from '../../components/StatusCard'
 import { ArtistList } from 'src/components/ArtistList'
+import { ProjectType } from './ProjectDetails'
 
-export const GeneralTabData = () => (
-  <FlexColumn gap='20px'>
-    <FlexWrap gap='20px'>
-      <ProjectInfoCard heading='PROJECT' name='Project_XYZ' icon={UsersIcon} />
-      <ProjectInfoCard
-        heading='CREATED BY'
-        name='John Doe'
-        subtitle='john.doe@renderimagination.com'
-        icon='https://picsum.photos/200'
-      />
-      <DateCard heading='CREATED ON' date='13/12/2022' calendarIconColor={PRIMARY_COLOR} />
-      <DateCard heading='DELIVERY BY' date='13/12/2022' calendarIconColor={ERROR_COLOR} />
-    </FlexWrap>
-    <FlexWrap gap='20px'>
-      <ProjectInfoCard heading='CLIENT PROJECT CODE' name='Project_XYZ_Code_1' icon={UsersIcon} />
-      <ProjectInfoCard
-        heading='INTERNAL PROJECT CODE'
-        name='Project_XYZ_IN_Name_1'
-        icon={UsersIcon}
-      />
-      <ProjectInfoCard
-        heading='INTERNAL PROJECT CODE'
-        name='Project_XYZ_IN_Name_1'
-        icon={UsersIcon}
-      />
-      <StatusCard status='Active' />
-    </FlexWrap>
+type GeneralTabDataProps = {
+  projectDetails: ProjectType
+}
 
-    <FlexWrap gap='20px'>
-      <WorkstationCard>
-        <CardHeading>WORKSTATIONS</CardHeading>
+export const GeneralTabData = ({ projectDetails }: GeneralTabDataProps) => {
+  const { name, createdAt, deliveryDate, clientProjectCode, internalProjectCode, status } =
+    projectDetails
 
-        <WorkstationTableWrapper>
-          <Table>
-            <WorkstationTableHead>
+  const creationDateObj = new Date(createdAt)
+  const deliveryDateObj = new Date(deliveryDate)
+
+  return (
+    <FlexColumn gap='20px'>
+      <FlexWrap gap='20px'>
+        <ProjectInfoCard heading='PROJECT' name={name || ''} icon={UsersIcon} />
+        <ProjectInfoCard
+          heading='CREATED BY'
+          name='John Doe'
+          subtitle='john.doe@renderimagination.com'
+          icon='https://picsum.photos/200'
+        />
+        <DateCard
+          heading='CREATED ON'
+          date={creationDateObj.toLocaleDateString()}
+          calendarIconColor={PRIMARY_COLOR}
+        />
+        <DateCard
+          heading='DELIVERY BY'
+          date={deliveryDateObj.toLocaleDateString()}
+          calendarIconColor={ERROR_COLOR}
+        />
+      </FlexWrap>
+      <FlexWrap gap='20px'>
+        <ProjectInfoCard heading='CLIENT PROJECT CODE' name={clientProjectCode} icon={UsersIcon} />
+        <ProjectInfoCard
+          heading='INTERNAL PROJECT CODE'
+          name={internalProjectCode}
+          icon={UsersIcon}
+        />
+        <ProjectInfoCard
+          heading='INTERNAL PROJECT CODE'
+          name={internalProjectCode}
+          icon={UsersIcon}
+        />
+        <StatusCard status={status} />
+      </FlexWrap>
+
+      <FlexWrap gap='20px'>
+        <WorkstationCard>
+          <CardHeading>WORKSTATIONS</CardHeading>
+
+          <WorkstationTableWrapper>
+            <Table>
+              <WorkstationTableHead>
+                <tr>
+                  <th>#</th>
+                  <th>Workstation Name</th>
+                  <th>Project Name</th>
+                  <th>Instance Type</th>
+                </tr>
+              </WorkstationTableHead>
+
               <tr>
-                <th>#</th>
-                <th>Workstation Name</th>
-                <th>Project Name</th>
-                <th>Instance Type</th>
+                <WorkstationTableItem>01</WorkstationTableItem>
+                <WorkstationTableItem>Workstation_Name_Lorem_IP</WorkstationTableItem>
+                <WorkstationTableItem>
+                  <Link to='#'>Project_Name_XYZ</Link>
+                </WorkstationTableItem>
+                <WorkstationTableItem>G5 16x Large</WorkstationTableItem>
               </tr>
-            </WorkstationTableHead>
+              <tr>
+                <WorkstationTableItem>01</WorkstationTableItem>
+                <WorkstationTableItem>Workstation_Name_Lorem_IP</WorkstationTableItem>
+                <WorkstationTableItem>
+                  <Link to='#'>Project_Name_XYZ</Link>
+                </WorkstationTableItem>
+                <WorkstationTableItem>G5 16x Large</WorkstationTableItem>
+              </tr>
+              <tr>
+                <WorkstationTableItem>01</WorkstationTableItem>
+                <WorkstationTableItem>Workstation_Name_Lorem_IP</WorkstationTableItem>
+                <WorkstationTableItem>
+                  <Link to='#'>Project_Name_XYZ</Link>
+                </WorkstationTableItem>
+                <WorkstationTableItem>G5 16x Large</WorkstationTableItem>
+              </tr>
+              <tr>
+                <WorkstationTableItem>01</WorkstationTableItem>
+                <WorkstationTableItem>Workstation_Name_Lorem_IP</WorkstationTableItem>
+                <WorkstationTableItem>
+                  <Link to='#'>Project_Name_XYZ</Link>
+                </WorkstationTableItem>
+                <WorkstationTableItem>G5 16x Large</WorkstationTableItem>
+              </tr>
+              <tr>
+                <WorkstationTableItem>01</WorkstationTableItem>
+                <WorkstationTableItem>Workstation_Name_Lorem_IP</WorkstationTableItem>
+                <WorkstationTableItem>
+                  <Link to='#'>Project_Name_XYZ</Link>
+                </WorkstationTableItem>
+                <WorkstationTableItem>G5 16x Large</WorkstationTableItem>
+              </tr>
+              <tr>
+                <WorkstationTableItem>01</WorkstationTableItem>
+                <WorkstationTableItem>Workstation_Name_Lorem_IP</WorkstationTableItem>
+                <WorkstationTableItem>
+                  <Link to='#'>Project_Name_XYZ</Link>
+                </WorkstationTableItem>
+                <WorkstationTableItem>G5 16x Large</WorkstationTableItem>
+              </tr>
+              <tr>
+                <WorkstationTableItem>01</WorkstationTableItem>
+                <WorkstationTableItem>Workstation_Name_Lorem_IP</WorkstationTableItem>
+                <WorkstationTableItem>
+                  <Link to='#'>Project_Name_XYZ</Link>
+                </WorkstationTableItem>
+                <WorkstationTableItem>G5 16x Large</WorkstationTableItem>
+              </tr>
+            </Table>
+          </WorkstationTableWrapper>
+        </WorkstationCard>
 
-            <tr>
-              <WorkstationTableItem>01</WorkstationTableItem>
-              <WorkstationTableItem>Workstation_Name_Lorem_IP</WorkstationTableItem>
-              <WorkstationTableItem>
-                <Link to='#'>Project_Name_XYZ</Link>
-              </WorkstationTableItem>
-              <WorkstationTableItem>G5 16x Large</WorkstationTableItem>
-            </tr>
-            <tr>
-              <WorkstationTableItem>01</WorkstationTableItem>
-              <WorkstationTableItem>Workstation_Name_Lorem_IP</WorkstationTableItem>
-              <WorkstationTableItem>
-                <Link to='#'>Project_Name_XYZ</Link>
-              </WorkstationTableItem>
-              <WorkstationTableItem>G5 16x Large</WorkstationTableItem>
-            </tr>
-            <tr>
-              <WorkstationTableItem>01</WorkstationTableItem>
-              <WorkstationTableItem>Workstation_Name_Lorem_IP</WorkstationTableItem>
-              <WorkstationTableItem>
-                <Link to='#'>Project_Name_XYZ</Link>
-              </WorkstationTableItem>
-              <WorkstationTableItem>G5 16x Large</WorkstationTableItem>
-            </tr>
-            <tr>
-              <WorkstationTableItem>01</WorkstationTableItem>
-              <WorkstationTableItem>Workstation_Name_Lorem_IP</WorkstationTableItem>
-              <WorkstationTableItem>
-                <Link to='#'>Project_Name_XYZ</Link>
-              </WorkstationTableItem>
-              <WorkstationTableItem>G5 16x Large</WorkstationTableItem>
-            </tr>
-            <tr>
-              <WorkstationTableItem>01</WorkstationTableItem>
-              <WorkstationTableItem>Workstation_Name_Lorem_IP</WorkstationTableItem>
-              <WorkstationTableItem>
-                <Link to='#'>Project_Name_XYZ</Link>
-              </WorkstationTableItem>
-              <WorkstationTableItem>G5 16x Large</WorkstationTableItem>
-            </tr>
-            <tr>
-              <WorkstationTableItem>01</WorkstationTableItem>
-              <WorkstationTableItem>Workstation_Name_Lorem_IP</WorkstationTableItem>
-              <WorkstationTableItem>
-                <Link to='#'>Project_Name_XYZ</Link>
-              </WorkstationTableItem>
-              <WorkstationTableItem>G5 16x Large</WorkstationTableItem>
-            </tr>
-            <tr>
-              <WorkstationTableItem>01</WorkstationTableItem>
-              <WorkstationTableItem>Workstation_Name_Lorem_IP</WorkstationTableItem>
-              <WorkstationTableItem>
-                <Link to='#'>Project_Name_XYZ</Link>
-              </WorkstationTableItem>
-              <WorkstationTableItem>G5 16x Large</WorkstationTableItem>
-            </tr>
-          </Table>
-        </WorkstationTableWrapper>
-      </WorkstationCard>
-
-      <ArtistList
-        artists={[
-          { name: 'John Doe', email: 'john.doe@renderimagination.com' },
-          { name: 'John Doe', email: 'john.doe@renderimagination.com' },
-        ]}
-        showSearchBar={false}
-      />
-    </FlexWrap>
-    <RenderCard noOfMachines={7} />
-  </FlexColumn>
-)
+        <ArtistList
+          artists={[
+            { name: 'John Doe', email: 'john.doe@renderimagination.com' },
+            { name: 'John Doe', email: 'john.doe@renderimagination.com' },
+          ]}
+          showSearchBar={false}
+        />
+      </FlexWrap>
+      <RenderCard noOfMachines={7} />
+    </FlexColumn>
+  )
+}
