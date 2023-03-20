@@ -5,9 +5,10 @@ import { FlexContainer } from '../SharedComponents'
 
 export const SearchBoxContainer = styled(FlexContainer)`
   border-radius: ${ROUNDED};
-  padding: 9px 10px;
+  padding: 9px 14px;
   border: 1px solid ${LIGHT_GREY_TEXT_COLOR};
   gap: 7px;
+  margin: 0 2rem;
 `
 
 export const SearchBoxInput = styled.input`

@@ -7,7 +7,7 @@ export const ButtonContainer = styled.button<ButtonProps>`
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  padding: 10px 15px;
+  padding: 2px 15px;
   border: 1px solid ${PRIMARY_COLOR};
   color: ${PRIMARY_COLOR};
   background-color: white;

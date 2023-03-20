@@ -18,7 +18,7 @@ const SideNavItemList = ({ items, heading, isDivider }: ISideNavItemList) => (
   <>
     <S.SideNavBarContainer>
       <S.SidebarHeading>{heading}</S.SidebarHeading>
-      {items.map((item) => (
+      {items?.map((item) => (
         <S.NavTab to={item.path} key={item.id} className='link'>
           <S.NavTabText>{item.name}</S.NavTabText>
         </S.NavTab>

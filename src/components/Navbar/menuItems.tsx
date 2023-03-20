@@ -7,6 +7,7 @@ import {
   WORKSTATIONS_ROUTE,
 } from 'src/constants/route'
 import GeneralPage from 'src/pages/GeneralPage'
+import Projects from 'src/pages/Projects'
 
 export const DashboardItems = [
   {
@@ -32,7 +33,7 @@ export const ManagementItems = [
     id: 2,
     name: 'Projects',
     path: PROJECTS_ROUTE,
-    component: <GeneralPage heading='Projects' />,
+    component: <Projects />,
   },
 
   // {

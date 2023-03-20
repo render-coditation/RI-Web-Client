@@ -3,8 +3,8 @@ import SearchIcon from '../../assets/icons/SearchIcon'
 import * as S from './style'
 
 export type SearchBoxProps = {
-  value: string
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+  value?: string
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
   placeholder?: string
   containerStyles?: React.CSSProperties
 }

@@ -8,8 +8,6 @@ const LogoutIcon = () => {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
 
-  navigate('/')
-
   const logOut = async () => {
     // loading true
     const response = await googleLogout()

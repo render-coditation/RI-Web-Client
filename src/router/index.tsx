@@ -7,6 +7,7 @@ import AppAndSideBarLayout from 'src/layouts'
 import { ComponentExamples } from 'src/pages/ComponentExamples'
 import GeneralPage from 'src/pages/GeneralPage'
 import { useAppSelector } from 'src/hooks/thunkAppDispatch'
+import Projects from 'src/pages/Projects'
 
 const Router = () => {
   const { isLoggedIn } = useAppSelector((state) => state.auth)
@@ -17,12 +18,13 @@ const Router = () => {
         {isLoggedIn ? (
           <Route element={<AppAndSideBarLayout />}>
             <Route path={HOME_ROUTE} element={<ComponentExamples />} />
-            {DashboardItems.map(({ id, path, name }) => (
-              <Route key={id} path={path} element={<GeneralPage heading={name} />} />
+            {DashboardItems.map(({ id, path, component }) => (
+              <Route key={id} path={path} element={component} />
             ))}
-            {ManagementItems.map(({ id, path, name }) => (
-              <Route key={id} path={path} element={<GeneralPage heading={name} />} />
+            {ManagementItems.map(({ id, path, component }) => (
+              <Route key={id} path={path} element={component} />
             ))}
+
             <Route
               path={`${PROJECTS_ROUTE}${PROJECT_URL_PARAM}`}
               element={<ProjectDetails heading='Projects' />}
