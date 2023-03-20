@@ -3,7 +3,7 @@ import { DatePickerContainer } from './style'
 
 type DateInputProps = {
   value: Date
-  onChange: React.Dispatch<React.SetStateAction<Date>>
+  onChange: (e: any) => void
 }
 
 export const DateInput = ({ value, onChange }: DateInputProps) => (

@@ -13,7 +13,7 @@ export const DashboardItems = [
 export const ManagementItems = [
   {
     id: 1,
-    name: ' Workstations',
+    name: 'Workstations',
     path: '/workstations',
   },
   {
