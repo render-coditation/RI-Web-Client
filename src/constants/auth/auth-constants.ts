@@ -1,4 +1,6 @@
 export const authConstants = {
-  LOCALSTORAGE_USER_TOKEN_KEY: '',
-  GoogleOAuthClientId: '1026995327145-v4e45smu5l55bk16t9l10pjuihedcoqf.apps.googleusercontent.com',
+  ACCESS_KEY: 'ACCESS_KEY',
+  GoogleOAuthClientId: `${process.env.REACT_APP_GOOGLE_CLIENT_ID}`,
+  redirectUri: `${process.env.REACT_APP_GOOGLE_REDIRECTED_URI}`,
+  scope: `${process.env.REACT_APP_GOOGLE_SCOPE}`,
 }

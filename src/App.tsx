@@ -1,7 +1,5 @@
-import React from 'react'
 import './App.css'
-import Router from './router'
-import Login from './pages/Auth/Login'
+import Router from 'src/router'
 
 function App() {
   return <Router />

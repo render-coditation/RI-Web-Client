@@ -1,11 +1,18 @@
+import {
+  MASTER_CONTROL_ROUTE,
+  MY_WORKSTATIONS_ROUTE,
+  PROJECTS_ROUTE,
+  RENDER_FARM_ROUTE,
+  WMI_ROUTE,
+  WORKSTATIONS_ROUTE,
+} from 'src/constants/route'
 import GeneralPage from 'src/pages/GeneralPage'
-import { ProjectPage } from 'src/pages/Project'
 
 export const DashboardItems = [
   {
     id: 1,
     name: 'My Workstations',
-    path: '/my-workstations',
+    path: MY_WORKSTATIONS_ROUTE,
     component: <GeneralPage heading='My Workstations' />,
   },
   // {
@@ -18,14 +25,14 @@ export const ManagementItems = [
   {
     id: 1,
     name: 'Workstations',
-    path: '/workstations',
+    path: WORKSTATIONS_ROUTE,
     component: <GeneralPage heading='Workstations' />,
   },
   {
     id: 2,
     name: 'Projects',
-    path: '/projects',
-    component: <ProjectPage heading='Projects' />,
+    path: PROJECTS_ROUTE,
+    component: <GeneralPage heading='Projects' />,
   },
 
   // {
@@ -51,19 +58,19 @@ export const ManagementItems = [
   {
     id: 7,
     name: 'Render Farm',
-    path: '/render-farm',
+    path: RENDER_FARM_ROUTE,
     component: <GeneralPage heading='Render Farm' />,
   },
   {
     id: 8,
     name: 'Master Control',
-    path: '/master-control',
+    path: MASTER_CONTROL_ROUTE,
     component: <GeneralPage heading='Master Control' />,
   },
   {
     id: 9,
     name: 'WMI',
-    path: '/wmi',
+    path: WMI_ROUTE,
     component: <GeneralPage heading='WMI' />,
   },
 ]
