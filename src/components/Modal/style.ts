@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { ARCHIVE_GREY_COLOR } from '../../constants/style/colors'
 import { FlexColumn } from '../SharedComponents'
 
 export const ModalWrapper = styled.div`
@@ -61,7 +62,7 @@ export const DeleteModalText = styled.p`
   font-weight: 600;
   font-size: 15px;
   line-height: 18px;
-  color: #808080;
+  color: ${ARCHIVE_GREY_COLOR};
   text-align: center;
 `
 

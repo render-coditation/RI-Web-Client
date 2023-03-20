@@ -1,14 +1,15 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App'
-import reportWebVitals from './reportWebVitals'
-import './index.css'
-import { GoogleOAuthProvider } from '@react-oauth/google'
-import { authConstants } from './constants/auth/auth-constants'
-import store from 'src/redux/app/store'
 import { Provider } from 'react-redux'
+import { GoogleOAuthProvider } from '@react-oauth/google'
+import { authConstants } from 'src/constants/auth/auth-constants'
+import store from 'src/redux/app/store'
+import App from 'src/App'
+import reportWebVitals from 'src/reportWebVitals'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'src/index.css'
 
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 const container = document.getElementById('root')!
 const root = createRoot(container)
 

@@ -5,4 +5,5 @@ const LOGOUT_URL = process.env.REACT_APP_LOGOUT_ENDPOINT
 export const api = {
   LOGIN_ENDPOINT: `${BASE_URL}${LOGIN_URL}`,
   LOGOUT_ENDPOINT: `${BASE_URL}${LOGOUT_URL}`,
+  PROJECT_ENDPOINT: `${BASE_URL}/projects`,
 }

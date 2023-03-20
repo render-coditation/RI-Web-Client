@@ -19,3 +19,7 @@ export const FlexColumn = styled(FlexContainer)`
 export const FlexAlignCenter = styled(FlexContainer)`
   align-items: center;
 `
+
+export const FlexWrap = styled(FlexContainer)`
+  flex-wrap: wrap;
+`
