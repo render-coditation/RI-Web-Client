@@ -16,9 +16,6 @@ const Projects = () => {
             <Button onClick={() => setShowModal(true)}>+Project</Button>
           </SearchAndAddProject>
         </HeaderRow>
-        <HeaderRow>
-          <HeaderTitle>Projects</HeaderTitle>
-        </HeaderRow>
       </HeaderWrapper>
       <PaddedDivider dividerWidth='95%' />
       <TwoStepForm showModal={showModal} setShowModal={setShowModal} />

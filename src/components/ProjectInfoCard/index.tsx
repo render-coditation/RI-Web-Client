@@ -1,9 +1,10 @@
+import { AvatarPlaceholder } from '../ArtistList/style'
 import { FlexColumn, FlexContainer } from '../SharedComponents'
 import {
   ProjectAvatar,
   ProjectDetails,
-  ProjectHeading,
-  ProjectInfoCardContainer,
+  CardHeading,
+  CardContainer,
   ProjectName,
   ProjectSubtitle,
 } from './style'
@@ -16,16 +17,14 @@ export type ProjectInfoCardProps = {
 }
 
 export const ProjectInfoCard = ({ heading, name, icon, subtitle }: ProjectInfoCardProps) => (
-  <ProjectInfoCardContainer>
-    <ProjectHeading>{heading}</ProjectHeading>
+  <CardContainer gap='10px'>
+    <CardHeading>{heading}</CardHeading>
     <ProjectDetails>
-      <ProjectAvatar>
-        <img src={icon} alt='icon' />
-      </ProjectAvatar>
+      <ProjectAvatar>{icon ? <img src={icon} alt='icon' /> : <AvatarPlaceholder />}</ProjectAvatar>
       <FlexColumn>
         <ProjectName>{name}</ProjectName>
         {subtitle && <ProjectSubtitle>{subtitle}</ProjectSubtitle>}
       </FlexColumn>
     </ProjectDetails>
-  </ProjectInfoCardContainer>
+  </CardContainer>
 )

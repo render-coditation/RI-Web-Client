@@ -5,13 +5,14 @@ import { FONT_500, FONT_600 } from '../../constants/style/fonts'
 import { AvatarIcon } from '../ArtistList/style'
 import { FlexColumn, FlexContainer } from '../SharedComponents'
 
-export const ProjectInfoCardContainer = styled(FlexColumn)`
+export const CardContainer = styled(FlexColumn)`
   box-shadow: 0px 0px 6px rgba(13, 10, 44, 0.08);
   border-radius: ${ROUNDED_3XL};
   padding: 15px;
+  flex: 1;
 `
 
-export const ProjectHeading = styled.p`
+export const CardHeading = styled.p`
   font-weight: ${FONT_600};
   font-size: 13px;
   line-height: 15px;
@@ -29,6 +30,7 @@ export const ProjectAvatar = styled(AvatarIcon)`
   img {
     height: 100%;
     width: 100%;
+    border-radius: 100%;
   }
 `
 

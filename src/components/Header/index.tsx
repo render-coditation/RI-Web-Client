@@ -9,9 +9,6 @@ const Header = ({ headerTitle }: any) => {
   return (
     <>
       <S.PageTitle>{headerTitle}</S.PageTitle>
-      <Button variant='primary' onClick={handleAddNewProject}>
-        Primary
-      </Button>{' '}
       <S.PaddedDivider />
     </>
   )

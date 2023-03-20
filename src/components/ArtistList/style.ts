@@ -41,7 +41,9 @@ export const ArtistDetails = styled(FlexColumn)`
   }
 `
 
-export const ArtistListContainer = styled(FlexColumn)``
+export const ArtistListContainer = styled(FlexColumn)`
+  flex: 1;
+`
 
 export const Section = styled.div`
   display: flex;
@@ -61,19 +63,6 @@ export const Section = styled.div`
 export const AddArtistBtn = styled(ButtonContainer)`
   border: none;
   gap: 4.5px;
-
-  figure {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 10.5px;
-    height: 10.5px;
-  }
-
-  figure img {
-    width: 100%;
-    height: 100%;
-  }
 `
 export const ArtistSearchSection = styled(FlexColumn)``
 
