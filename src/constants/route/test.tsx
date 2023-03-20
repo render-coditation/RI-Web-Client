@@ -1,3 +1,3 @@
-export const LOGIN_PATH = '/login'
+export const LOGIN_PATH = '/'
 export const HOME = '/'
 export const MULTISTEPFORM = '/multi'

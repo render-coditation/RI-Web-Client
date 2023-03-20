@@ -10,13 +10,13 @@ export const GoogleLoginContainer = styled.div`
   font-size: 15px;
   font-weight: 600;
 `
-export const GoogleLogOut = styled.button`
+export const GoogleLogin = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
-  background-color: #db4437;
-  color: white;
+  border: 1px solid #b3b2b1;
+  background-color: #ffffff;
+  color: #000000;
   padding: 10px 52px;
   border-radius: 5px;
   font-size: 15px;
@@ -25,5 +25,6 @@ export const GoogleLogOut = styled.button`
 
   .google-icon {
     margin-right: 10px;
+    color: blue;
   }
 `
